@@ -1,0 +1,19 @@
+{
+  "name": "instam",
+  "version": "1.0.0",
+  "description": "instant messaging project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tscodes70/instaM.git"
+  },
+  "author": "teemo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tscodes70/instaM/issues"
+  },
+  "homepage": "https://github.com/tscodes70/instaM#readme"
+}
