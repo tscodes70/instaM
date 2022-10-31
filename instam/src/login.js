@@ -1,38 +1,41 @@
-
 import React from "react"
+import './App.css'
 
-export default function (props) {
+export default function Login (props) {
   return (
-    <div className="Auth-form-container">
-      <form className="Auth-form">
-        <div className="Auth-form-content">
-          <h3 className="Auth-form-title">Sign In</h3>
-          <div className="form-group mt-3">
-            <label>Email address</label>
-            <input
-              type="email"
-              className="form-control mt-1"
-              placeholder="Enter email"
-            />
+    <html>
+      <div className="Auth-form-container">
+        <form className="Auth-form">
+          <div className="Auth-form-content">
+            <h3 className="Auth-form-title">Welcome Back</h3>
+            <h5 className="Auth-form-desc">Sign in to continue</h5>
+            <div className="form-group mt-3">
+              <label>Email address</label>
+              <input
+                type="email"
+                className="form-control mt-1"
+                placeholder="Enter email"
+              />
+            </div>
+            <div className="form-group mt-3">
+              <label>Password</label>
+              <input
+                type="password"
+                className="form-control mt-1"
+                placeholder="Enter password"
+              />
+            </div>
+            <div className="d-grid gap-2 mt-3">
+              <button type="submit" className="btn btn-primary">
+                Submit
+              </button>
+            </div>
+            <p className="forgot-password text-right mt-2">
+              <a href="#">Forgot Password?</a>
+            </p>
           </div>
-          <div className="form-group mt-3">
-            <label>Password</label>
-            <input
-              type="password"
-              className="form-control mt-1"
-              placeholder="Enter password"
-            />
-          </div>
-          <div className="d-grid gap-2 mt-3">
-            <button type="submit" className="btn btn-primary">
-              Submit
-            </button>
-          </div>
-          <p className="forgot-password text-right mt-2">
-            Forgot <a href="#">password?</a>
-          </p>
-        </div>
-      </form>
-    </div>
+        </form>
+      </div>
+    </html>
   )
 }
