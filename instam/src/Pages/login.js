@@ -1,9 +1,14 @@
-import React from "react"
-import './App.css'
+import React, { useState } from "react"
+import "../App.css"
+import { handleLogin } from "../handlers/apphandles";
+import { useNavigate } from "react-router-dom";
 
 export default function Login (props) {
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   return (
-    <html>
       <div className="Auth-form-container">
         <form className="Auth-form">
           <div className="Auth-form-content">
@@ -15,6 +20,7 @@ export default function Login (props) {
                 type="email"
                 className="form-control mt-1"
                 placeholder="Enter email"
+                onChange={(e)=> setEmail(e.target.value)}
               />
             </div>
             <div className="form-group mt-3">
@@ -23,11 +29,12 @@ export default function Login (props) {
                 type="password"
                 className="form-control mt-1"
                 placeholder="Enter password"
+                onChange={(e)=> setPassword(e.target.value)}
               />
             </div>
             <div className="d-grid gap-2 mt-3">
-              <button type="submit" className="btn btn-primary">
-                Submit
+              <button type="submit" className="btn btn-primary" onClick={(e)=> handleLogin(e,email,password,navigate)}>
+                Login
               </button>
             </div>
             <p className="forgot-password text-right mt-2">
@@ -36,6 +43,5 @@ export default function Login (props) {
           </div>
         </form>
       </div>
-    </html>
   )
 }

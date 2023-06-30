@@ -1,12 +1,14 @@
 
 import './App.css';
-import Login from "./login"
-import Register from "./register"
-import Home from "./home"
+import Login from "./Pages/login"
+import Register from "./Pages/register"
+import Home from "./Pages/home"
+import Start from "./Pages/start"
 import NavigationBar from "./navigationbar"
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AnimatePresence } from "framer-motion";
+import { RequireAuth } from "./Authentication/RequireAuth";
 
 
 //Check if user has existing cookie
@@ -19,15 +21,16 @@ function App() {
       <NavigationBar />
       <AnimatePresence>
 
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-        </Routes>
-      </BrowserRouter>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<RequireAuth><Home /></RequireAuth>} />
+            <Route path="/start" element={<Start />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
+          </Routes>
+        </BrowserRouter>
 
-          </AnimatePresence>
+      </AnimatePresence>
     </div>
   );
 }

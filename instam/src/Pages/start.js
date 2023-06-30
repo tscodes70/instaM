@@ -1,8 +1,8 @@
-import './App.css';
+import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {useNavigate} from 'react-router-dom';
 
-export default function Home() {
+export default function Start() {
   const navigate = useNavigate();
     const redirLogin = () => {
       navigate('/login');
@@ -13,9 +13,7 @@ export default function Home() {
     };
 
   return (
-    <html className="home-html">
     <div className="home">
-
       <div className="home-container">
           <div className="home-div">
           <p className="welcome-msg">
@@ -33,6 +31,5 @@ export default function Home() {
       </div>
 
     </div>
-    </html>
   );
 }

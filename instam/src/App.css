@@ -4,7 +4,7 @@
   --homebtncolor : #373B44;
 }
 
-html {
+.home {
   background-color: var(--bgcolor);
   height: 100%;
   overflow: hidden;
