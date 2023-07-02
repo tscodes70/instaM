@@ -1,7 +1,8 @@
 import '../App.css';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import {handleRegister} from '../handlers/apphandles';
+import { handleRegister } from '../handlers/apphandles';
+import Spline from '@splinetool/react-spline';
 
 export default function Register() {
   const navigate = useNavigate();
@@ -11,6 +12,8 @@ export default function Register() {
   const [cfmpassword, setCfmPassword] = useState("");
 
   return (
+    <div className="bgscene">
+      <Spline scene="https://prod.spline.design/KIHUKysh-BGuqpT0/scene.splinecode" />
       <div className="Auth-form-container">
         <form className="Auth-form">
           <div className="Auth-form-content">
@@ -21,7 +24,7 @@ export default function Register() {
                 type="email"
                 className="form-control mt-1"
                 placeholder="Enter email"
-                onChange={(e)=>setEmail(e.target.value)}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div className="form-group mt-3">
@@ -30,7 +33,7 @@ export default function Register() {
                 type="text"
                 className="form-control mt-1"
                 placeholder="Enter Username"
-                onChange={(e)=>setUsername(e.target.value)}
+                onChange={(e) => setUsername(e.target.value)}
               />
             </div>
             <div className="form-group mt-3">
@@ -39,7 +42,7 @@ export default function Register() {
                 type="password"
                 className="form-control mt-1"
                 placeholder="Enter password"
-                onChange={(e)=>setPassword(e.target.value)}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
             <div className="form-group mt-3">
@@ -48,16 +51,20 @@ export default function Register() {
                 type="password"
                 className="form-control mt-1"
                 placeholder="Confirm password"
-                onChange={(e)=>setCfmPassword(e.target.value)}
+                onChange={(e) => setCfmPassword(e.target.value)}
               />
             </div>
             <div className="d-grid gap-2 mt-3">
-              <button className="btn btn-primary" onClick={(e)=>handleRegister(e,username,email,password,cfmpassword, navigate)}>
+              <button className="btn btn-primary" onClick={(e) => handleRegister(e, username, email, password, cfmpassword, navigate)}>
                 Register
               </button>
             </div>
+            <p className="register text-center mt-2">
+              Have an account? <a href="/login">Sign In Here</a>
+            </p>
           </div>
         </form>
       </div>
+    </div>
   );
 }

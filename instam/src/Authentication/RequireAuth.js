@@ -3,7 +3,7 @@ import { Navigate } from "react-router-dom";
 
 export const RequireAuth = ({ children }) => {
   if (!auth.currentUser) {
-    return <Navigate to="/start" />;
+    return <Navigate to="/login" />;
   }
 
   return children;
